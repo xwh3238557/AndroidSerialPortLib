@@ -2,7 +2,7 @@
 A Serialport support lib for android, using kotlin
 
 # Quick Start
-You can use this as a android module, and import into you Application use:
+You can use this as an android module, and import into you Application use:
 
 ```gradle
 implementation project(':serialportutil')
@@ -27,8 +27,9 @@ same as wirte you can read the data from serialport using:
 fun read(): ByteArray?
 ```
 
-
+# About C part code
 the c code was using google open source project.I just wrap them using kotlin.
 
-if you have some problems using this lib or you have some awsome idea to make this lib greader.You can direct send your opinions to 443517937@qq.com
+# Make it better
+if you have some problems using this lib or you have some awsome idea to make this lib better, You can direct send your opinions to 443517937@qq.com
 
