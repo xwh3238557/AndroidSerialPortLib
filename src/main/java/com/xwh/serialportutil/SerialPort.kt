@@ -15,11 +15,11 @@ open class SerialPort(val device: File, val baudrate: Int, val flags: Int = 0) {
      */
     private external fun open(path: String, baudrate: Int, flags: Int): FileDescriptor?
 
-    private external fun close()
+    external fun close()
 
     private val readWriteLock = ReentrantReadWriteLock()
 
-    private lateinit var fileDescriptor: FileDescriptor
+    private lateinit var mFd: FileDescriptor
     private lateinit var fileInputStream: FileInputStream
     private lateinit var fileOutputStream: FileOutputStream
 
@@ -41,7 +41,7 @@ open class SerialPort(val device: File, val baudrate: Int, val flags: Int = 0) {
                 throw SecurityException()
             }
         }
-        fileDescriptor = open(device.absolutePath, baudrate, flags)?.also {
+        mFd = open(device.absolutePath, baudrate, flags)?.also {
             fileInputStream = FileInputStream(it)
             fileOutputStream = FileOutputStream(it)
         } ?: throw IOException()
