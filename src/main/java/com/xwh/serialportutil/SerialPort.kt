@@ -19,7 +19,7 @@ open class SerialPort(val device: File, val baudrate: Int, val flags: Int = 0) {
 
     private val readWriteLock = ReentrantReadWriteLock()
 
-    private lateinit var mFd: FileDescriptor
+    private var mFd: FileDescriptor
     private lateinit var fileInputStream: FileInputStream
     private lateinit var fileOutputStream: FileOutputStream
 
